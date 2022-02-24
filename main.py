@@ -1,4 +1,5 @@
 import requests
+import sys
 
 
 def request_api_data(query_char):
@@ -7,3 +8,6 @@ def request_api_data(query_char):
   if res.status_code != 200:
     raise RuntimeError(f'Error fetching: {res.status_code}, check the api and try again')
   return res
+
+if __name__ == '__main__':
+  sys.exit(main(sys.argv[1:]))
